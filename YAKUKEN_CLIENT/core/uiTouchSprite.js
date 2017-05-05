@@ -28,7 +28,7 @@ function CHECK_VISIBLE(node)
 var uiTouchSprite = cc.Sprite.extend(
     {
         TARGET:null,
-        TOUCH_SOUND:res_sound.touch,
+        TOUCH_SOUND:res_sound[0],
         setTarget:function(target)
         {
             this.TARGET = target;

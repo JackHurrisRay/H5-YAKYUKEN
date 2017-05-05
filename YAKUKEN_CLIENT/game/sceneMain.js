@@ -77,6 +77,35 @@ var sceneMain = cc.Scene.extend(
             button_player_com.setPosition(SCREEN_SIZE.WIDTH * 0.75, SCREEN_SIZE.HEIGHT/2 - 96 - 160 * 2 );
             button_player_com.setScale(0.85);
             this.BACKGROUND.addChild(button_player_com);
+
+            ////////
+            this.WX_IMG = cc.Sprite.create(res_pix.PIX_WX_IMG);
+            this.WX_IMG.setPosition(180, SCREEN_SIZE.HEIGHT - 182);
+            this.BACKGROUND.addChild(this.WX_IMG);
+
+            ////////////
+            var shader = new cc.GLProgram.create(res_shader.VS_NORMAL, res_shader.PS_AROUND_RECT);
+            shader.retain();
+
+            shader.addAttribute(cc.ATTRIBUTE_NAME_POSITION, cc.VERTEX_ATTRIB_POSITION);
+            shader.addAttribute(cc.ATTRIBUTE_NAME_COLOR, cc.VERTEX_ATTRIB_COLOR);
+            shader.addAttribute(cc.ATTRIBUTE_NAME_TEX_COORD, cc.VERTEX_ATTRIB_TEX_COORDS);
+
+            shader.link();
+            shader.updateUniforms();
+
+            var sp = this.WX_IMG;
+            const _flag_w = 256 / sp.getContentSize().width;
+            const _flag_h = 256 / sp.getContentSize().height;
+
+            sp.setScale(_flag_w, _flag_h);
+            if( shader != null )
+            {
+                sp.setShaderProgram( shader );
+            }
+
+            //loadImgFromUrl(_sptPlayerInfo, clientSystem.getInstance().SELF_PLAYER.img_url, {x:96,y:96},{w:180,h:180},0, shader);
+
         },
         initBackGroundAnimation:function()
         {

@@ -35,7 +35,7 @@ const res_javascript =
         ////
         "http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js",
         "http://3gimg.qq.com/lightmap/components/geolocation/geolocation.min.js",
-        "jquery-3.1.1.js",
+        "http://5941game.oss-cn-qingdao.aliyuncs.com/common/jquery-3.1.1.js",
         "core/base64.js",
 
         ////
@@ -53,8 +53,10 @@ const res_particles =
     ];
 
 const res_sound =
-{
-};
+    [
+        "res/soundeffect/touch.wav",
+        "res/soundeffect/door.wav"
+    ];
 
 const res_music =
     [
@@ -72,7 +74,10 @@ const res_shader =
 var res_pix =
 {
     PIX_PNG:"res/pix/pix_source.png",
-    PIX_PLIST:"res/pix/pix_source.plist"
+    PIX_PLIST:"res/pix/pix_source.plist",
+
+
+    PIX_WX_IMG:"res/pix/wx_image.jpg",
 }
 
 var gResource = [
@@ -83,14 +88,15 @@ var gResource = [
 
     ////
     res_pix.PIX_PNG,
-    res_pix.PIX_PLIST
+    res_pix.PIX_PLIST,
 
     ////
-
+    res_pix.PIX_WX_IMG,
 
 ];
 
 gResource = gResource.concat(res_javascript);
 gResource = gResource.concat(res_particles);
+gResource = gResource.concat(res_sound);
 gResource = gResource.concat(res_music);
 gResource = gResource.concat(res_bmFont);

@@ -106,6 +106,30 @@ var sceneMain = cc.Scene.extend(
 
             //loadImgFromUrl(_sptPlayerInfo, clientSystem.getInstance().SELF_PLAYER.img_url, {x:96,y:96},{w:180,h:180},0, shader);
 
+            ////
+            const font_color = cc.color(12, 98, 169);
+
+            ////////
+            this.ACCOUNT_ID = cc.LabelTTF.create("123456", FONT_NAME.FONT_HEITI, 24);
+            this.ACCOUNT_ID.setHorizontalAlignment(cc.TEXT_ALIGNMENT_LEFT);
+            this.ACCOUNT_ID.setAnchorPoint(0.0, 0.0);
+            this.ACCOUNT_ID.setPosition(SCREEN_SIZE.WIDTH / 2 + 36, SCREEN_SIZE.HEIGHT - 152);
+            this.ACCOUNT_ID.setColor(font_color);
+
+            this.BACKGROUND.addChild(this.ACCOUNT_ID);
+
+            var _initName = "JackHurrisRay";
+            var _fitName = FitString(_initName, 12);
+
+            this.ACCOUNT_NAME = cc.LabelTTF.create(_fitName, FONT_NAME.FONT_HEITI, 24);
+            this.ACCOUNT_NAME.setHorizontalAlignment(cc.TEXT_ALIGNMENT_LEFT);
+            this.ACCOUNT_NAME.setAnchorPoint(0.0, 0.0);
+            this.ACCOUNT_NAME.setPosition(SCREEN_SIZE.WIDTH / 2 + 84, SCREEN_SIZE.HEIGHT - 204);
+            this.ACCOUNT_NAME.setColor(font_color);
+
+            this.BACKGROUND.addChild(this.ACCOUNT_NAME);
+
+
         },
         initBackGroundAnimation:function()
         {

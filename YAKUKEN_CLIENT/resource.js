@@ -24,12 +24,14 @@ const SCREEN_SIZE =
     HEIGHT:1040
 };
 
-const BM_FONT =
+const TTF_FONT =
 {
+    FONT_HUAKANGSHAOLV:"http://5941game.oss-cn-qingdao.aliyuncs.com/font/huakangshaonv.TTF"
 };
 
-const res_bmFont =
+const res_Font =
     [
+        //TTF_FONT.FONT_HUAKANGSHAOLV
     ];
 
 const res_javascript =
@@ -101,4 +103,4 @@ gResource = gResource.concat(res_javascript);
 gResource = gResource.concat(res_particles);
 gResource = gResource.concat(res_sound);
 gResource = gResource.concat(res_music);
-gResource = gResource.concat(res_bmFont);
+gResource = gResource.concat(res_Font);

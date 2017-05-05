@@ -108,27 +108,39 @@ function  createCanvas()
     document.body.appendChild(mainCanvas);
 };
 
-/*
-setTimeout(function(){
-    var u = navigator.userAgent;
-    if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1 || u.indexOf('iPhone') > -1) {
-        
-        var screenW = screen.width - 50;
-        var screenH = screen.height; 
-        var idGameCanvas = document.getElementById("gameCanvas");
-        var bodyW = document.body.clientWidth;
-        var bodyH = document.body.clientHeight;
+function chkstrlen(str, lengthcheck)
+{
+    var strlen = 0;
+    var index  = 0;
 
-        if(bodyW > bodyH){
-            document.getElementById('switchCcreen').style.display = 'none';
-        }else{
-            document.getElementById('switchCcreen').style.display = 'block';
+    for(var i = 0;i < str.length; i++)
+    {
+        if(str.charCodeAt(i) > 255) //如果是汉字，则字符串长度加2
+            strlen += 2;
+        else
+            strlen++;
+
+        if(strlen > lengthcheck && index == 0)
+        {
+            index = i;
         }
-
-        idGameCanvas.style.cssText = "width:"+screenH+"px;height:"+screenW+"px;";
     }
-},10);
-*/
+    return   {length:strlen, cut:index};
+};
+
+function FitString(str, length)
+{
+    var out = str;
+    var cut = chkstrlen(str, length);
+
+    if( cut.cut != 0 )
+    {
+        out = out.substr(0, cut.cut);
+        out += "...";
+    }
+
+    return out;
+}
 
 
 ////////

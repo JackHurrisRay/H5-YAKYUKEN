@@ -154,6 +154,13 @@
             <filename>login/cloud_1.png</filename>
             <filename>login/cloud_2.png</filename>
             <filename>login/banner.png</filename>
+            <filename>main/ui_main.png</filename>
+            <filename>../../../../project/YEQIUQUAN/bird_1.png</filename>
+            <filename>../../../../project/YEQIUQUAN/bird_dot.png</filename>
+            <filename>../../../../project/YEQIUQUAN/bird_0.png</filename>
+            <filename>../../../../project/YEQIUQUAN/button_play_com.png</filename>
+            <filename>../../../../project/YEQIUQUAN/button_play_friend.png</filename>
+            <filename>../../../../project/YEQIUQUAN/button_play_ai.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

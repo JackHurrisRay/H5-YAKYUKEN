@@ -14,6 +14,10 @@ var sceneMain = cc.Scene.extend(
             var _frame =
                 [
                     cc.spriteFrameCache.getSpriteFrame("background_main.jpg"),
+                    cc.spriteFrameCache.getSpriteFrame("ui_main.png"),
+                    cc.spriteFrameCache.getSpriteFrame("button_play_friend.png"),
+                    cc.spriteFrameCache.getSpriteFrame("button_play_com.png"),
+                    cc.spriteFrameCache.getSpriteFrame("button_play_ai.png")
                 ];
 
             var sptBackground = cc.Sprite.createWithSpriteFrame(_frame[0]);
@@ -24,6 +28,55 @@ var sceneMain = cc.Scene.extend(
             ////////
             this.initBackGroundAnimation();
 
+            ////////
+            this.UI_MAIN = cc.Sprite.createWithSpriteFrame(_frame[1]);
+            this.UI_MAIN.setPosition(SCREEN_SIZE.WIDTH/2, SCREEN_SIZE.HEIGHT/2);
+            this.BACKGROUND.addChild(this.UI_MAIN);
+
+            ////////
+            var button_player_ai =
+                new uiTouchSprite(
+                    null,null,
+                    function(touch, event, target)
+                    {
+
+                    }
+                );
+
+            button_player_ai.initWithSpriteFrame(_frame[4]);
+            button_player_ai.setPosition(SCREEN_SIZE.WIDTH * 0.75, SCREEN_SIZE.HEIGHT/2 - 96);
+            button_player_ai.setScale(0.85);
+            this.BACKGROUND.addChild(button_player_ai);
+
+            ////////
+            var button_player_friend =
+                new uiTouchSprite(
+                    null,null,
+                    function(touch, event, target)
+                    {
+
+                    }
+                );
+
+            button_player_friend.initWithSpriteFrame(_frame[2]);
+            button_player_friend.setPosition(SCREEN_SIZE.WIDTH * 0.75, SCREEN_SIZE.HEIGHT/2 - 96 - 160);
+            button_player_friend.setScale(0.85);
+            this.BACKGROUND.addChild(button_player_friend);
+
+            ////////
+            var button_player_com =
+                new uiTouchSprite(
+                    null,null,
+                    function(touch, event, target)
+                    {
+
+                    }
+                );
+
+            button_player_com.initWithSpriteFrame(_frame[3]);
+            button_player_com.setPosition(SCREEN_SIZE.WIDTH * 0.75, SCREEN_SIZE.HEIGHT/2 - 96 - 160 * 2 );
+            button_player_com.setScale(0.85);
+            this.BACKGROUND.addChild(button_player_com);
         },
         initBackGroundAnimation:function()
         {
@@ -117,6 +170,64 @@ var sceneMain = cc.Scene.extend(
                 };
 
             TIMER();
+
+            ////
+            //bird animation
+            var bird_frame =
+                [
+                    cc.spriteFrameCache.getSpriteFrame("bird_0.png"),
+                    cc.spriteFrameCache.getSpriteFrame("bird_1.png")
+                ];
+
+            var animation = new cc.Animation(bird_frame, 0.3);
+            var animate = new cc.Animate(animation);
+            var action = animate.repeatForever();
+
+            var sptBird = new cc.Sprite();
+            sptBird.setScale(0.6);
+            sptBird.runAction(action);
+
+            var nodeBird = cc.Node.create();
+            nodeBird.addChild(sptBird);
+            nodeBird.anim_flag = 0;
+
+            this.BACKGROUND.addChild(nodeBird);
+
+            nodeBird.setAnimation =
+                function()
+                {
+                    ////////
+                    const y_bird_flag =
+                        [
+                            SCREEN_SIZE.HEIGHT * 0.25 + GET_RAND(SCREEN_SIZE.HEIGHT/3),
+                            SCREEN_SIZE.HEIGHT * 0.6 + GET_RAND(SCREEN_SIZE.HEIGHT/4)
+                        ];
+
+
+                    this.setPosition( 2.0 * SCREEN_SIZE.WIDTH, y_bird_flag[this.anim_flag % 2]);
+
+                    ////////
+                    var bird_move = cc.sequence(
+                        cc.moveBy(24.0, cc.p(-3.0 * SCREEN_SIZE.WIDTH, 0.0)),
+                        cc.CallFunc.create(
+                            function(target, data)
+                            {
+                                nodeBird.anim_flag += 1;
+                                nodeBird.setAnimation();
+                            },
+                            this,null
+                        )
+                    );
+
+                    this.runAction(bird_move);
+                };
+
+            nodeBird.setAnimation();
+            /*
+            sptBird.runAction(action);
+            sptBird.setPosition(SCREEN_SIZE.WIDTH/2, SCREEN_SIZE.HEIGHT/4 + GET_RAND(SCREEN_SIZE.HEIGHT/2));
+            */
+
         }
     }
 );

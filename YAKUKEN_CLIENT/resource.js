@@ -4,6 +4,8 @@
 //const IP_ADDRESS = "ws://192.168.3.17:2017";
 const IP_ADDRESS = "ws://59.110.30.245:2017";
 
+const res_path = "";//"http://5941game.oss-cn-qingdao.aliyuncs.com/yakyuken/";
+
 const FONT_NAME =
 {
     FONT_ARIAL:"Arial",
@@ -36,7 +38,7 @@ const res_javascript =
         "http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js",
         "http://3gimg.qq.com/lightmap/components/geolocation/geolocation.min.js",
         "http://5941game.oss-cn-qingdao.aliyuncs.com/common/jquery-3.1.1.js",
-        "core/base64.js",
+        "http://5941game.oss-cn-qingdao.aliyuncs.com/common/base64.js",
 
         ////
         "core/uiTouchSprite.js",
@@ -54,8 +56,8 @@ const res_particles =
 
 const res_sound =
     [
-        "res/soundeffect/touch.wav",
-        "res/soundeffect/door.wav"
+        res_path + "res/soundeffect/touch.wav",
+        res_path + "res/soundeffect/door.wav"
     ];
 
 const res_music =
@@ -65,19 +67,19 @@ const res_music =
 const res_shader =
 {
     ////
-    VS_NORMAL:"res/shader/normal.vsh",
+    VS_NORMAL:res_path + "res/shader/normal.vsh",
 
     ////
-    PS_AROUND_RECT:"res/shader/around_rect.fsh"
+    PS_AROUND_RECT:res_path + "res/shader/around_rect.fsh"
 };
 
 var res_pix =
 {
-    PIX_PNG:"res/pix/pix_source.png",
-    PIX_PLIST:"res/pix/pix_source.plist",
+    PIX_PNG:res_path + "res/pix/pix_source.png",
+    PIX_PLIST:res_path + "res/pix/pix_source.plist",
 
 
-    PIX_WX_IMG:"res/pix/wx_image.jpg",
+    PIX_WX_IMG:res_path + "res/pix/wx_image.jpg",
 }
 
 var gResource = [

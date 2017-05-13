@@ -161,6 +161,18 @@
             <filename>../../../../project/YEQIUQUAN/button_play_com.png</filename>
             <filename>../../../../project/YEQIUQUAN/button_play_friend.png</filename>
             <filename>../../../../project/YEQIUQUAN/button_play_ai.png</filename>
+            <filename>../../../../project/YEQIUQUAN/anim_0_0.png</filename>
+            <filename>../../../../project/YEQIUQUAN/anim_0_1.png</filename>
+            <filename>../../../../project/YEQIUQUAN/anim_1_0.png</filename>
+            <filename>../../../../project/YEQIUQUAN/anim_1_1.png</filename>
+            <filename>../../../../project/YEQIUQUAN/anim_2_0.png</filename>
+            <filename>../../../../project/YEQIUQUAN/anim_2_1.png</filename>
+            <filename>../../../../project/YEQIUQUAN/anim_3_0.png</filename>
+            <filename>../../../../project/YEQIUQUAN/anim_3_1.png</filename>
+            <filename>../../../../project/YEQIUQUAN/anim_3_2.png</filename>
+            <filename>../../../../project/YEQIUQUAN/anim_3_3.png</filename>
+            <filename>../../../../project/YEQIUQUAN/fight_panel.png</filename>
+            <filename>../../../../project/YEQIUQUAN/icon_yakyuken.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

@@ -10,7 +10,9 @@ var sceneLogin = cc.Scene.extend(
 
             const size = this.size;
 
-            cc.spriteFrameCache.addSpriteFrames(res_pix.PIX_PLIST, res_pix.PIX_PNG);
+            cc.textureCache.addImage(res_pix.PIX_PNG);
+            //cc.spriteFrameCache.addSpriteFrames(res_pix.PIX_PLIST, res_pix.PIX_PNG);
+            cc.spriteFrameCache.addSpriteFrames(res_pix.PIX_PLIST, cc.textureCache.getTextureForKey(res_pix.PIX_PNG));
 
             var _frame =
                 [

@@ -1,8 +1,8 @@
 {
     "debugMode"     : 1,
-    "frameRate"     : 30,
+    "frameRate"     : 60,
     "id"            : "gameCanvas",
     "renderMode"    : 2,
     "jsList"        : [],
-    "showFPS"       : false
+    "showFPS"       : true
 }

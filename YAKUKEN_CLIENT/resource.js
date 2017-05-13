@@ -48,7 +48,8 @@ const res_javascript =
 
         ////
         "game/sceneLogin.js",
-        "game/sceneMain.js"
+        "game/sceneMain.js",
+        "game/sceneGame.js"
 
     ];
 

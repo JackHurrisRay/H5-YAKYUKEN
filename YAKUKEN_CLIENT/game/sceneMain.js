@@ -39,7 +39,10 @@ var sceneMain = cc.Scene.extend(
                     null,null,
                     function(touch, event, target)
                     {
-
+                        ////////
+                        var scene = new sceneGame();
+                        var _trans = new cc.TransitionCrossFade(1, scene);
+                        cc.director.runScene(_trans);
                     }
                 );
 

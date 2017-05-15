@@ -21,6 +21,10 @@ var clientRequest =
                             dataType:"json",
                             data:msg,
                             crossDomain:true,
+                            beforeSend:function(xhr)
+                            {
+                                xhr.setRequestHeader("Access-Control-Allow-Origin","*");
+                            },
                             success:function(data)
                             {
                                 console.log(data);

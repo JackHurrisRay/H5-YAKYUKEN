@@ -44,6 +44,10 @@ const res_javascript =
 
         ////
         "core/uiTouchSprite.js",
+
+        ////
+        "game/clientRequest.js",
+        "game/network.js",
         "game/option.js",
 
         ////

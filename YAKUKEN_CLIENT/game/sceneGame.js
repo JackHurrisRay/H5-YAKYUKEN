@@ -56,12 +56,6 @@ var sceneGame = cc.Scene.extend(
             setTimeout(
                 function()
                 {
-                    /*
-                    SELF_PANEL.runAction(
-                        cc.tintTo(0.5, 0, 0, 255)
-                    );
-                    */
-
                     var action2Func =
                         function()
                         {

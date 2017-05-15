@@ -28,6 +28,9 @@ var sceneLogin = cc.Scene.extend(
                 null,null,
                 function(touch, event, target)
                 {
+                    clientRequest.login();
+
+
                     ////////
                     var scene = new sceneMain();
                     var _trans = new cc.TransitionCrossFade(1, scene);

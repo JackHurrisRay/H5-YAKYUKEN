@@ -11,15 +11,16 @@ var clientRequest =
                 ////////
                 login:function()
                 {
-                    var msg = {account_id:"18302079187", account_pwd:"passord"};
+                    var msg = {"account_id":"18302079187", "account_pwd":"passord"};
 
-                    jQuery.ajax(
+                    $.ajax(
                         {
                             type:"post",
                             url:"http://47.92.88.155:1021/login/login",
                             contentType:"application/json",
                             dataType:"json",
                             data:msg,
+                            crossDomain:true,
                             success:function(data)
                             {
                                 console.log(data);

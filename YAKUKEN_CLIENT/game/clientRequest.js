@@ -12,29 +12,24 @@ var clientRequest =
                 login:function()
                 {
                     var msg = {"account_id":"18302079187", "account_pwd":"passord"};
+                    const URL = "http://47.92.88.155:1021/login/login";
 
-                    $.ajax(
-                        {
-                            type:"post",
-                            url:"http://47.92.88.155:1021/login/login",
-                            contentType:"application/json",
-                            dataType:"json",
-                            data:msg,
-                            crossDomain:true,
-                            beforeSend:function(xhr)
-                            {
-                                xhr.setRequestHeader("Access-Control-Allow-Origin","*");
-                            },
-                            success:function(data)
-                            {
-                                console.log(data);
-                            },
-                            error:function(error)
-                            {
-                                console.log(error.message);
-                            }
-                        }
-                    );
+                    var settings = {
+                        "async": true,
+                        "crossDomain": true,
+                        "url": "http://47.92.88.155:1021/login/login",
+                        "method": "POST",
+                        "headers": {
+                            "content-type": "application/json"
+                        },
+                        "processData": false,
+                        "data": JSON.stringify(msg)
+                    }
+
+                    $.ajax(settings).done(function (response) {
+                        console.log(response);
+                    });
+
                 },
 
             };

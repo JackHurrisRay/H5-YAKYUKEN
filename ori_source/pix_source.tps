@@ -54,7 +54,7 @@
         <key>maxTextureSize</key>
         <QSize>
             <key>width</key>
-            <int>2048</int>
+            <int>4096</int>
             <key>height</key>
             <int>2048</int>
         </QSize>
@@ -76,7 +76,7 @@
             <key>sizeConstraints</key>
             <enum type="AlgorithmSettings::SizeConstraints">POT</enum>
             <key>forceSquared</key>
-            <true/>
+            <false/>
             <key>forceWordAligned</key>
             <false/>
             <key>maxRects</key>
@@ -173,6 +173,10 @@
             <filename>../../../../project/YEQIUQUAN/anim_3_3.png</filename>
             <filename>../../../../project/YEQIUQUAN/fight_panel.png</filename>
             <filename>../../../../project/YEQIUQUAN/icon_yakyuken.png</filename>
+            <filename>../../../../project/YEQIUQUAN/button_fight_bu.png</filename>
+            <filename>../../../../project/YEQIUQUAN/button_fight_jiandao.png</filename>
+            <filename>../../../../project/YEQIUQUAN/button_fight_shitou.png</filename>
+            <filename>../../../../project/YEQIUQUAN/background_dlg.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

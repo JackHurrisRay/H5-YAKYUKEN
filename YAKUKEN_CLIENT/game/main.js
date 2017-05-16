@@ -64,6 +64,85 @@ function show_option_dialog()
     cc._optionDialog.show();
 }
 */
+
+function TDRecord(data)
+{
+    TDGA.onItemPurchase({
+        item :data.item,
+        itemNumber : 1,
+        priceInVirtualCurrency : data.priceInVirtualCurrency
+    });
+
+    TDGA.onItemUse({
+        item : data.item,
+        itemNumber : 1
+    });
+};
+
+const MISSION_NAME = "进入房间";
+function TDMissionBegin()
+{
+    TDGA.onMissionBegin(MISSION_NAME);
+}
+
+function TDMissionResult(success, cause)
+{
+    if( success )
+    {
+        TDGA.onMissionCompleted(MISSION_NAME);
+    }
+    else
+    {
+        TDGA.onMissionFailed(MISSION_NAME, cause?cause.toString():"unknown");
+    }
+}
+
+function initShader()
+{
+    ////////
+    {
+        var shader = new cc.GLProgram.create(res_shader.VS_NORMAL, res_shader.PS_AROUND_RECT);
+        shader.retain();
+
+        shader.addAttribute(cc.ATTRIBUTE_NAME_POSITION, cc.VERTEX_ATTRIB_POSITION);
+        shader.addAttribute(cc.ATTRIBUTE_NAME_COLOR, cc.VERTEX_ATTRIB_COLOR);
+        shader.addAttribute(cc.ATTRIBUTE_NAME_TEX_COORD, cc.VERTEX_ATTRIB_TEX_COORDS);
+
+        shader.link();
+        shader.updateUniforms();
+
+        cc.SHADER_playerImg = shader;
+    }
+
+    {
+        var shader = new cc.GLProgram.create(res_shader.VS_NORMAL, res_shader.PS_FIGHT_IMG_UP);
+        shader.retain();
+
+        shader.addAttribute(cc.ATTRIBUTE_NAME_POSITION, cc.VERTEX_ATTRIB_POSITION);
+        shader.addAttribute(cc.ATTRIBUTE_NAME_COLOR, cc.VERTEX_ATTRIB_COLOR);
+        shader.addAttribute(cc.ATTRIBUTE_NAME_TEX_COORD, cc.VERTEX_ATTRIB_TEX_COORDS);
+
+        shader.link();
+        shader.updateUniforms();
+
+        cc.SHADER_playerGameImgUP = shader;
+    }
+
+    {
+        var shader = new cc.GLProgram.create(res_shader.VS_NORMAL, res_shader.PS_FIGHT_IMG_DOWN);
+        shader.retain();
+
+        shader.addAttribute(cc.ATTRIBUTE_NAME_POSITION, cc.VERTEX_ATTRIB_POSITION);
+        shader.addAttribute(cc.ATTRIBUTE_NAME_COLOR, cc.VERTEX_ATTRIB_COLOR);
+        shader.addAttribute(cc.ATTRIBUTE_NAME_TEX_COORD, cc.VERTEX_ATTRIB_TEX_COORDS);
+
+        shader.link();
+        shader.updateUniforms();
+
+        cc.SHADER_playerGameImgDown = shader;
+    }
+}
+
 ////////
 window.onload = function(){
 
@@ -94,6 +173,7 @@ window.onload = function(){
 
             //game init
             //game_init();
+            initShader();
 
             //game start
             cc.director.runScene(new sceneLogin());

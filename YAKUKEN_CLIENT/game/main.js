@@ -146,12 +146,6 @@ function initShader()
 ////////
 window.onload = function(){
 
-    //GET_GPS();
-    if( checkGeolocation() )
-    {
-        GET_GPS();
-    }
-
     cc.game.onStart = function(){
 
         //

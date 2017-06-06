@@ -28,13 +28,22 @@ var sceneLogin = cc.Scene.extend(
                 null,null,
                 function(touch, event, target)
                 {
-                    clientRequest.login();
+                    //clientRequest.login();
 
 
                     ////////
                     var scene = new sceneMain();
                     var _trans = new cc.TransitionCrossFade(1, scene);
                     cc.director.runScene(_trans);
+
+                    NetworkSystem.start(
+                        "12345678",
+                        function()
+                        {
+
+                        }
+                    );
+
                 }
             );
 

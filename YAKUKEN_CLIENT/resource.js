@@ -35,7 +35,7 @@ const res_javascript =
     [
         ////
         "http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js",
-        "http://3gimg.qq.com/lightmap/components/geolocation/geolocation.min.js",
+        //"http://3gimg.qq.com/lightmap/components/geolocation/geolocation.min.js",
         "http://5941game.oss-cn-qingdao.aliyuncs.com/common/jquery-3.1.1.js",
         "http://5941game.oss-cn-qingdao.aliyuncs.com/common/base64.js",
 
